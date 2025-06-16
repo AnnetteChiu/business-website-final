@@ -1,0 +1,420 @@
+{% extends "base.html" %}
+
+{% block title %}Skeleton Loading Demo{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="mb-0">
+                    <i class="fas fa-magic me-2"></i>
+                    Skeleton Loading Demo
+                </h1>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary" onclick="demoAllSkeletons()">
+                        <i class="fas fa-play me-2"></i>Demo All
+                    </button>
+                    <button class="btn btn-outline-secondary" onclick="resetAllDemos()">
+                        <i class="fas fa-refresh me-2"></i>Reset
+                    </button>
+                </div>
+            </div>
+            
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle me-2"></i>
+                <strong>Skeleton Loading System:</strong> These animated placeholders show while content is loading, 
+                providing a smooth user experience. Click the demo buttons to see each skeleton type in action.
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Grid Skeleton Demo -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">
+                        <i class="fas fa-th-large me-2"></i>Product Grid Skeleton
+                    </h5>
+                    <button class="btn btn-sm btn-outline-primary" onclick="demoProductGrid()">
+                        <i class="fas fa-play me-1"></i>Demo
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div id="product-grid-demo">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="card h-100">
+                                    <img src="/static/uploads/product.png" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Sample Product">
+                                    <div class="card-body">
+                                        <span class="badge bg-success mb-2">New</span>
+                                        <h6 class="card-title">Sample Product</h6>
+                                        <p class="card-text text-muted small">High quality product description</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h6 class="text-primary mb-0">$29.99</h6>
+                                            <button class="btn btn-sm btn-primary">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="card h-100">
+                                    <img src="/static/uploads/product_two.jpg" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Another Product">
+                                    <div class="card-body">
+                                        <span class="badge bg-warning mb-2">Sale</span>
+                                        <h6 class="card-title">Another Product</h6>
+                                        <p class="card-text text-muted small">Amazing features and quality</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h6 class="text-primary mb-0">$19.99</h6>
+                                            <button class="btn btn-sm btn-primary">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content List Skeleton Demo -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">
+                        <i class="fas fa-list me-2"></i>Content List Skeleton
+                    </h5>
+                    <button class="btn btn-sm btn-outline-primary" onclick="demoContentList()">
+                        <i class="fas fa-play me-1"></i>Demo
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div id="content-list-demo">
+                        <div class="d-flex align-items-center mb-3 p-3 border rounded">
+                            <img src="/static/uploads/profile-1.jpg" class="rounded-circle me-3" style="width: 40px; height: 40px; object-fit: cover;" alt="User">
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1">How to Build Amazing Web Applications</h6>
+                                <p class="mb-0 text-muted small">A comprehensive guide to modern web development...</p>
+                                <div class="d-flex gap-3 mt-2">
+                                    <small class="text-muted">5 min read</small>
+                                    <small class="text-muted">Technology</small>
+                                    <small class="text-muted">2 hours ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3 p-3 border rounded">
+                            <img src="/static/uploads/profile-2.jpg" class="rounded-circle me-3" style="width: 40px; height: 40px; object-fit: cover;" alt="User">
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1">Design Trends for 2025</h6>
+                                <p class="mb-0 text-muted small">Explore the latest design trends and best practices...</p>
+                                <div class="d-flex gap-3 mt-2">
+                                    <small class="text-muted">3 min read</small>
+                                    <small class="text-muted">Design</small>
+                                    <small class="text-muted">1 day ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Skeleton Demo -->
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">
+                        <i class="fas fa-edit me-2"></i>Form Skeleton
+                    </h5>
+                    <button class="btn btn-sm btn-outline-primary" onclick="demoForm()">
+                        <i class="fas fa-play me-1"></i>Demo
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div id="form-demo">
+                        <h5>Create New Content</h5>
+                        <div class="mb-3">
+                            <label class="form-label">Title</label>
+                            <input type="text" class="form-control" value="Sample Title">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Category</label>
+                            <select class="form-select">
+                                <option>Blog Post</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Content</label>
+                            <textarea class="form-control" rows="4">Sample content here...</textarea>
+                        </div>
+                        <button class="btn btn-primary">Save Content</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Card Skeleton Demo -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">
+                        <i class="fas fa-file-alt me-2"></i>Content Card Skeleton
+                    </h5>
+                    <button class="btn btn-sm btn-outline-primary" onclick="demoContentCard()">
+                        <i class="fas fa-play me-1"></i>Demo
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div id="content-card-demo">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Sample Article Title</h5>
+                                <p class="card-text">This is a sample article with some content that demonstrates how content cards look when loaded...</p>
+                                <p class="card-text text-muted">Additional information and details about the content.</p>
+                                <hr>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">Published 2 hours ago</small>
+                                    <button class="btn btn-sm btn-primary">Read More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table Skeleton Demo -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">
+                        <i class="fas fa-table me-2"></i>Table Skeleton
+                    </h5>
+                    <button class="btn btn-sm btn-outline-primary" onclick="demoTable()">
+                        <i class="fas fa-play me-1"></i>Demo
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div id="table-demo">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Category</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Sample Content 1</td>
+                                        <td>Blog Post</td>
+                                        <td><span class="badge bg-success">Published</span></td>
+                                        <td><button class="btn btn-sm btn-primary">Edit</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sample Content 2</td>
+                                        <td>Article</td>
+                                        <td><span class="badge bg-warning">Draft</span></td>
+                                        <td><button class="btn btn-sm btn-primary">Edit</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Skeleton Demo -->
+    <div class="row mb-5">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">
+                        <i class="fas fa-user me-2"></i>Profile Skeleton
+                    </h5>
+                    <button class="btn btn-sm btn-outline-primary" onclick="demoProfile()">
+                        <i class="fas fa-play me-1"></i>Demo
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div id="profile-demo">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="/static/uploads/profile-3.jpg" class="rounded-circle me-3" style="width: 60px; height: 60px; object-fit: cover;" alt="User">
+                            <div>
+                                <h5 class="mb-1">John Developer</h5>
+                                <p class="mb-0 text-muted">john@example.com</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <p>Full-stack developer passionate about creating amazing user experiences with modern web technologies.</p>
+                        <p>Currently working on innovative projects involving AI, machine learning, and responsive design.</p>
+                        <p>Always eager to learn new technologies and collaborate on exciting projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading States Demo -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-spinner me-2"></i>Loading States & Utilities
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <button class="btn btn-outline-primary w-100" onclick="demoLoadingSpinner()">
+                                <i class="fas fa-play me-2"></i>Loading Spinner
+                            </button>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <button class="btn btn-outline-success w-100" onclick="demoImageSkeleton()">
+                                <i class="fas fa-image me-2"></i>Image Skeleton
+                            </button>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <button class="btn btn-outline-info w-100" onclick="demoPageLoader()">
+                                <i class="fas fa-globe me-2"></i>Page Loader
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="loading-demo-area" class="mt-4" style="min-height: 200px; display: none;">
+                        <div class="text-center p-4 border rounded">
+                            <div id="demo-content">
+                                <h6>Demo Content Area</h6>
+                                <p>This area will demonstrate various loading states.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Demo functions for skeleton loading
+function demoProductGrid() {
+    const container = document.getElementById('product-grid-demo');
+    window.ContentManager.showSkeletonLoading(container, 'product-grid');
+    setTimeout(() => window.ContentManager.hideSkeletonLoading(container), 3000);
+}
+
+function demoContentList() {
+    const container = document.getElementById('content-list-demo');
+    window.ContentManager.showSkeletonLoading(container, 'content-list');
+    setTimeout(() => window.ContentManager.hideSkeletonLoading(container), 3000);
+}
+
+function demoForm() {
+    const container = document.getElementById('form-demo');
+    window.ContentManager.showSkeletonLoading(container, 'form');
+    setTimeout(() => window.ContentManager.hideSkeletonLoading(container), 3000);
+}
+
+function demoContentCard() {
+    const container = document.getElementById('content-card-demo');
+    window.ContentManager.showSkeletonLoading(container, 'content-card');
+    setTimeout(() => window.ContentManager.hideSkeletonLoading(container), 3000);
+}
+
+function demoTable() {
+    const container = document.getElementById('table-demo');
+    window.ContentManager.showSkeletonLoading(container, 'table');
+    setTimeout(() => window.ContentManager.hideSkeletonLoading(container), 3000);
+}
+
+function demoProfile() {
+    const container = document.getElementById('profile-demo');
+    window.ContentManager.showSkeletonLoading(container, 'profile');
+    setTimeout(() => window.ContentManager.hideSkeletonLoading(container), 3000);
+}
+
+function demoLoadingSpinner() {
+    const demoArea = document.getElementById('loading-demo-area');
+    const content = document.getElementById('demo-content');
+    
+    demoArea.style.display = 'block';
+    content.innerHTML = '<div class="loading-spinner mx-auto"></div>';
+    
+    setTimeout(() => {
+        content.innerHTML = `
+            <h6>Loading Complete!</h6>
+            <p>Content has finished loading.</p>
+        `;
+    }, 2000);
+}
+
+function demoImageSkeleton() {
+    const demoArea = document.getElementById('loading-demo-area');
+    const content = document.getElementById('demo-content');
+    
+    demoArea.style.display = 'block';
+    content.innerHTML = '<div class="skeleton skeleton-image mx-auto" style="max-width: 300px;"></div>';
+    
+    setTimeout(() => {
+        content.innerHTML = `
+            <img src="/static/uploads/web.jpg" class="img-fluid rounded mx-auto d-block" style="max-width: 300px;" alt="Loaded Image">
+            <p class="text-center mt-2">Image loaded successfully!</p>
+        `;
+    }, 2500);
+}
+
+function demoPageLoader() {
+    // Create full page overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'loading-overlay';
+    overlay.innerHTML = '<div class="loading-spinner"></div>';
+    document.body.appendChild(overlay);
+    
+    setTimeout(() => {
+        overlay.remove();
+        window.ContentManager.showNotification('Page loading demo complete!', 'success');
+    }, 1500);
+}
+
+function demoAllSkeletons() {
+    const demos = [demoProductGrid, demoContentList, demoForm, demoContentCard, demoTable, demoProfile];
+    
+    demos.forEach((demo, index) => {
+        setTimeout(() => {
+            demo();
+        }, index * 500);
+    });
+    
+    window.ContentManager.showNotification('Running all skeleton demos...', 'info');
+}
+
+function resetAllDemos() {
+    const containers = ['product-grid-demo', 'content-list-demo', 'form-demo', 'content-card-demo', 'table-demo', 'profile-demo'];
+    
+    containers.forEach(id => {
+        const container = document.getElementById(id);
+        if (container && container.dataset.originalContent) {
+            window.ContentManager.hideSkeletonLoading(container);
+        }
+    });
+    
+    const demoArea = document.getElementById('loading-demo-area');
+    demoArea.style.display = 'none';
+    
+    window.ContentManager.showNotification('All demos reset!', 'success');
+}
+</script>
+{% endblock %}
